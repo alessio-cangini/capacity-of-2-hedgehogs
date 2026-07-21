@@ -78,7 +78,7 @@ profileGraphic[Pi, 2/3, Pi/4]
 | Function                     | Description                                                       |
 | ---------------------------- | ----------------------------------------------------------------- |
 | `uniformizationValue[t,s,p]` | Computes the modulus of the Riemann map on the unit circle.       |
-| `Angle[s,p]`                 | Computes the auxiliary angle used in the branch-point formulas.   |
+| `auxiliaryAngle[s,p]`        | Computes the auxiliary angle used in the branch-point formulas.   |
 | `realQuillParameter[s,p]`    | Computes the parameter corresponding to the real endopoint.       |
 | `complexQuillParameter[s,p]` | Computes the parameter corresponding to the complex endpoint.     |
 | `domainGraphic[s,p,a]`       | Draws the parameterization of the unit circle.                    |
