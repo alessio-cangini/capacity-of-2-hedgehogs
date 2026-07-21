@@ -1,0 +1,412 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     14588,        404]
+NotebookOptionsPosition[     13480,        378]
+NotebookOutlinePosition[     13905,        395]
+CellTagsIndexPosition[     13862,        392]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Parameterizing 2-hedgehogs: an interactive visualization", "Title",
+ CellChangeTimes->{{3.9936119815349207`*^9, 3.993612010000636*^9}, {
+  3.993618444225569*^9, 
+  3.99361844637584*^9}},ExpressionUUID->"752cb76a-3cc2-4795-bcac-\
+8834f53de491"],
+
+Cell["\<\
+In this notebook, we produce an animation to visualize how the Riemann map \
+parameterizes 2-hedgehogs of fixed angles and unit transfinite diameter. \
+\>", "Subtitle",
+ CellChangeTimes->{{3.9936120261239367`*^9, 
+  3.9936120855299263`*^9}},ExpressionUUID->"f09277f1-65e1-49f5-9d5d-\
+542fb380c032"],
+
+Cell[TextData[{
+ "The complex numbers ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["z", "1"], ",", "...", ",", 
+   SubscriptBox["z", "n"]}]], "InlineCode",ExpressionUUID->
+  "5f85d248-8e86-408a-8227-b680614348b8"],
+ " generate the ",
+ StyleBox["hedgehog ",
+  FontWeight->"Bold"],
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"H", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["z", "1"], ",", "...", ",", 
+      SubscriptBox["z", "n"]}], ")"}]}], "=", 
+   RowBox[{
+    SubscriptBox["\[Union]", 
+     RowBox[{"i", "\[Element]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "...", ",", "n"}], "}"}]}]], 
+    RowBox[{"[", 
+     RowBox[{"0", ",", 
+      SubscriptBox["z", "i"]}], "]"}]}]}]], "InlineCode",ExpressionUUID->
+  "7f64785a-c6a2-4ccc-94a3-31142f40355b"],
+ " where ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"[", 
+    RowBox[{"0", ",", 
+     SubscriptBox["z", "i"]}], "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"t", " ", 
+     RowBox[{
+      SubscriptBox["z", "i"], " ", ":", " ", 
+      RowBox[{"0", "\[LessEqual]", "t", "\[LessEqual]", "1"}]}]}], "}"}]}]], 
+  "InlineCode",ExpressionUUID->"94592d96-ac07-4006-9638-51e07ff833d2"],
+ ".\nSuppose that ",
+ Cell[BoxData[
+  RowBox[{"n", "=", "2"}]], "InlineCode",ExpressionUUID->
+  "6441d3b4-59be-4dd5-a33b-37a4b3fd58e5"],
+ ". Up to rotation, we can assume that ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["z", "1"], "=", 
+   SubscriptBox["z", "r"]}]], "InlineCode",ExpressionUUID->
+  "196a6913-1851-4ab3-a497-78795cae6930"],
+ " is a real number and ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["z", "2"], "=", 
+   SubscriptBox["z", "c"]}]], "InlineCode",ExpressionUUID->
+  "01789950-9b49-4fcd-b3b9-d46d663bc755"],
+ " is a complex number with positive imaginary part.  Assume that ",
+ Cell[BoxData[
+  RowBox[{"H", "=", 
+   RowBox[{"H", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["z", "r"], ",", "z_c"}]}]}]}]], "InlineCode",
+  ExpressionUUID->"4ead8874-9187-495b-a099-2f5b9927f1fa"],
+ ") has transfinite diameter 1 and denote the counterclockwise angle from ",
+ Cell[BoxData[
+  RowBox[{"[", 
+   RowBox[{"0", ",", 
+    SubscriptBox["z", "r"]}], "]"}]], "InlineCode",ExpressionUUID->
+  "5414d677-cd75-4b71-a82a-3bdb90aacb95"],
+ "to",
+ Cell[BoxData[
+  RowBox[{"[", 
+   RowBox[{"0", ",", 
+    SubscriptBox["z", "c"]}], "]"}]], "InlineCode",ExpressionUUID->
+  "a6ed2bc2-8bb9-40e9-bf6b-b9ae5d105294"],
+ "by ",
+ Cell[BoxData[
+ "\[Theta]"], "InlineCode",ExpressionUUID->
+  "089f45ba-d366-41f6-adcd-36e73f3ef927"],
+ ". After a computation due to Harry Schmidt, the Riemann parameterization in \
+this case can be written as ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"\[CapitalPsi]", 
+    RowBox[{"(", "t", ")"}]}], "=", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], 
+     FractionBox["p", "2"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"-", 
+       SuperscriptBox["e", 
+        RowBox[{"-", "is"}]]}], ")"}], 
+     RowBox[{
+      FractionBox["p", "2"], "-", "1"}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["e", "it"], "-", "1"}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["e", 
+          RowBox[{"-", "it"}]], "-", "1"}], ")"}]}], ")"}], 
+     FractionBox["p", "2"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["e", "it"], "-", 
+         SuperscriptBox["e", "is"]}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["e", 
+          RowBox[{"-", "it"}]], "-", 
+         SuperscriptBox["e", 
+          RowBox[{"-", "is"}]]}], ")"}]}], ")"}], 
+     RowBox[{"1", "-", 
+      FractionBox["p", "2"]}]]}]}]], "InlineCode",ExpressionUUID->
+  "c3df06ef-6142-402f-b8d0-0fae8e014078"],
+ ", where ",
+ Cell[BoxData[
+  RowBox[{"s", "\[Element]", 
+   RowBox[{"(", 
+    RowBox[{"0", ",", "\[Pi]"}], ")"}]}]], "InlineCode",ExpressionUUID->
+  "d41ea3a1-588e-44c2-8702-bd0f6d8ed666"],
+ "is a parameter determining H and ",
+ Cell[BoxData[
+  RowBox[{"p", "=", 
+   RowBox[{"\[Theta]", "/", "\[Pi]"}]}]], "InlineCode",ExpressionUUID->
+  "086e6ffb-99a5-4e9c-98be-64d4b22a8f24"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.993612110471117*^9, 3.9936123076664124`*^9}, {
+   3.9936123603349733`*^9, 3.9936124089572773`*^9}, {3.993612497688925*^9, 
+   3.993612511878985*^9}, {3.9936125469361763`*^9, 3.993612897157045*^9}, {
+   3.993612931422237*^9, 3.993612934705881*^9}, {3.993613029650476*^9, 
+   3.993613067619616*^9}, {3.993613150017619*^9, 3.993613475773654*^9}, 
+   3.993616608187008*^9},ExpressionUUID->"c5317d6d-876c-4db6-aa7e-\
+72cc380745b6"],
+
+Cell[TextData[{
+ "We are interested in the absolute value ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", 
+    RowBox[{"(", "t", ")"}]}], "=", 
+   RowBox[{
+    RowBox[{"|", 
+     RowBox[{"\[CapitalPsi]", 
+      RowBox[{"(", "t", ")"}]}], "|"}], "=", 
+    RowBox[{"2", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"cos", "[", "t", "]"}]}], ")"}], 
+      FractionBox["p", "2"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"cos", "[", 
+         RowBox[{"t", "-", "s"}], "]"}]}], ")"}], 
+      RowBox[{"1", "-", 
+       FractionBox["p", "2"]}]]}]}]}]], "InlineCode",ExpressionUUID->
+  "d8c372a6-8a5d-4ee2-b203-b97c94030548"],
+ ".\nWe proved that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"|", 
+    SubscriptBox["z", "r"], "|"}], "=", 
+   RowBox[{"f", 
+    RowBox[{"(", 
+     SubscriptBox["t", "r"], ")"}]}]}]], "InlineCode",ExpressionUUID->
+  "6dd32d67-b20f-44bc-924e-1149edb5268f"],
+ "  and ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"|", 
+    SubscriptBox["z", "c"], "|"}], "=", 
+   RowBox[{"f", 
+    RowBox[{"(", 
+     SubscriptBox["t", "c"], ")"}]}]}]], "InlineCode",ExpressionUUID->
+  "c441ee54-2d6d-4265-94c1-6153b5a3f07a"],
+ "where  ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["t", "r"], "=", 
+   RowBox[{
+    FractionBox["s", "2"], "+", 
+    RowBox[{"ArcSin", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"p", "-", "1"}], ")"}], 
+      RowBox[{"Sin", "[", 
+       FractionBox["s", "2"], "]"}]}], "]"}]}]}]], "InlineCode",
+  ExpressionUUID->"26fe5018-a55d-4344-9efd-75a9dd60be5e"],
+ "and ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["t", "c"], "=", 
+   RowBox[{
+    FractionBox["s", "2"], "+", "\[Pi]", "-", 
+    RowBox[{"ArcSin", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"p", "-", "1"}], ")"}], 
+      RowBox[{"Sin", "[", 
+       FractionBox["s", "2"], "]"}]}], "]"}]}]}]], "InlineCode",
+  ExpressionUUID->"6039ec58-594b-4619-9aa6-b67cf4ac0c60"],
+ ".\nTo keep the code more readable, we will call ",
+ Cell[BoxData[
+ "uniformizationValue"], "InlineCode",ExpressionUUID->
+  "e9f397d1-657b-4759-a3c1-3e4dab844a67"],
+ " the map ",
+ Cell[BoxData[
+ "f"], "InlineCode",ExpressionUUID->"a1c22253-bf6c-424e-b307-f4c2725a7f2d"],
+ "; define ",
+ Cell[BoxData[
+  RowBox[{"Angle", "[", 
+   RowBox[{"s", ",", "p"}], "]"}]], "InlineCode",ExpressionUUID->
+  "110ad955-08c3-4cf8-825c-e07475504f47"],
+ " the arcsine summand in the expression for ",
+ Cell[BoxData[
+ "f"], "InlineCode",ExpressionUUID->"cc49875c-299e-4432-968c-7b37f130b65d"],
+ ";"
+}], "Text",
+ CellChangeTimes->{{3.9936166255296297`*^9, 3.993616653668009*^9}, 
+   3.993623650558996*^9},ExpressionUUID->"892512b4-6aeb-4f4e-a9c4-\
+b63d7be66550"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.993616990044483*^9, 3.993616994930545*^9}},
+ CellLabel->
+  "In[117]:=",ExpressionUUID->"55dcede0-f178-4551-ae46-9195ed53679a"],
+
+Cell[BoxData[{
+ RowBox[{"Get", "[", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], 
+     ",", "\"\<TwoHedgehogs.wl\>\""}], "}"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<TwoHedgehogs`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.993616640594215*^9, 3.993616640596694*^9}, {
+   3.99361674447921*^9, 3.993616747085436*^9}, {3.993616784344891*^9, 
+   3.99361684770499*^9}, {3.9936186897527227`*^9, 3.993618697401616*^9}, 
+   3.993618768302948*^9, {3.993623508961275*^9, 3.9936235212417183`*^9}, {
+   3.993623611978422*^9, 3.993623625298607*^9}, {3.99362372498641*^9, 
+   3.9936237272993097`*^9}},
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"2ae3a7e5-7b37-405a-af01-54d37c3c3e22"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["hedgehogAnimation"], "Input",
+ CellChangeTimes->{{3.993617190736999*^9, 3.9936171907395973`*^9}, {
+  3.993617829806828*^9, 3.99361783052632*^9}, {3.993623825993848*^9, 
+  3.993623826144905*^9}},
+ CellLabel->
+  "In[120]:=",ExpressionUUID->"8d30ccd8-7429-4b86-be1f-2c414e054533"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{TwoHedgehogs`Private`a$$ = Pi, TwoHedgehogs`Private`p$$ =
+     Rational[2, 3], TwoHedgehogs`Private`s$$ = Pi, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[TwoHedgehogs`Private`p$$], 
+       Rational[2, 3], "p"}, 
+      Rational[1, 1000000], 1, ControlType -> Manipulator}, {{
+       Hold[TwoHedgehogs`Private`s$$], Pi, "s"}, 0, 2 Pi, ControlType -> 
+      Manipulator}, {{
+       Hold[TwoHedgehogs`Private`a$$], Pi, "a"}, 0, 2 Pi, ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
+    750., {315.609916844442, 322.7748338366295}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       TwoHedgehogs`Private`a$$ = Pi, TwoHedgehogs`Private`p$$ = 
+        Rational[2, 3], TwoHedgehogs`Private`s$$ = Pi}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> GraphicsGrid[{{
+          TwoHedgehogs`domainGraphic[
+          TwoHedgehogs`Private`s$$, TwoHedgehogs`Private`p$$, 
+           TwoHedgehogs`Private`a$$], 
+          TwoHedgehogs`hedgehogGraphic[
+          TwoHedgehogs`Private`s$$, TwoHedgehogs`Private`p$$, 
+           TwoHedgehogs`Private`a$$]}, {SpanFromLeft, 
+          TwoHedgehogs`profileGraphic[
+          TwoHedgehogs`Private`s$$, TwoHedgehogs`Private`p$$, 
+           TwoHedgehogs`Private`a$$]}}], 
+      "Specifications" :> {{{TwoHedgehogs`Private`p$$, 
+          Rational[2, 3], "p"}, 
+         Rational[1, 1000000], 1, Appearance -> "Labeled"}, {{
+         TwoHedgehogs`Private`s$$, Pi, "s"}, 0, 2 Pi, Appearance -> 
+         "Labeled"}, {{TwoHedgehogs`Private`a$$, Pi, "a"}, 0, 2 Pi, 
+         Appearance -> "Labeled"}}, 
+      "Options" :> {
+       TrackedSymbols :> {
+         TwoHedgehogs`Private`p$$, TwoHedgehogs`Private`s$$, 
+          TwoHedgehogs`Private`a$$}, SynchronousUpdating -> False}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{809.375, {411.19794861324084`, 418.36286560542834`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.993617191309065*^9, 3.993617469194798*^9, 3.993617519133524*^9, {
+   3.9936175579114933`*^9, 3.9936175851927567`*^9}, 3.993617710070376*^9, 
+   3.9936177983752117`*^9, {3.993617831137368*^9, 3.993617860441605*^9}, 
+   3.993617914338338*^9, 3.993617976611161*^9, {3.9936180080960693`*^9, 
+   3.993618058402245*^9}, {3.9936181194250393`*^9, 3.993618145914084*^9}, 
+   3.9936184505483627`*^9, 3.99361850387461*^9, 3.993618551872925*^9, 
+   3.9936235228269377`*^9, 3.9936235810452633`*^9, 3.99362364037496*^9, 
+   3.99362367169407*^9, 3.9936237340401373`*^9, 3.993623827128271*^9, 
+   3.993623875748184*^9},
+ CellLabel->
+  "Out[120]=",ExpressionUUID->"e435288a-2e26-4f47-a085-4fc075fb1871"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1614, 1287},
+WindowMargins->{{859, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"58ea5a97-b477-4137-a263-a94287227dda"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 249, 4, 120, "Title",ExpressionUUID->"752cb76a-3cc2-4795-bcac-8834f53de491"],
+Cell[828, 28, 308, 6, 104, "Subtitle",ExpressionUUID->"f09277f1-65e1-49f5-9d5d-542fb380c032"],
+Cell[1139, 36, 4616, 142, 132, "Text",ExpressionUUID->"c5317d6d-876c-4db6-aa7e-72cc380745b6"],
+Cell[5758, 180, 2690, 87, 103, "Text",ExpressionUUID->"892512b4-6aeb-4f4e-a9c4-b63d7be66550"],
+Cell[8451, 269, 243, 5, 36, "Input",ExpressionUUID->"55dcede0-f178-4551-ae46-9195ed53679a"],
+Cell[8697, 276, 765, 15, 62, "Input",ExpressionUUID->"2ae3a7e5-7b37-405a-af01-54d37c3c3e22"],
+Cell[CellGroupData[{
+Cell[9487, 295, 291, 5, 36, "Input",ExpressionUUID->"8d30ccd8-7429-4b86-be1f-2c414e054533"],
+Cell[9781, 302, 3671, 72, 866, "Output",ExpressionUUID->"e435288a-2e26-4f47-a085-4fc075fb1871"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
