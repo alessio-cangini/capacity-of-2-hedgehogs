@@ -1,8 +1,8 @@
 # README
 
 We computed the capacity of a hedgehog spanned by two distinct complex numbers. Our 
-computation builds on the Riemann parameterization of headgehogs computed by Harry 
-Schmidt. The theory is contained in the file **main.pdf**, while the Wolfram Language 
+computation builds on the Riemann parameterization of headgehogs computed by [Harry 
+Schmidt]([https://www.example.com](https://livewarwickac-my.sharepoint.com/personal/u2272428_live_warwick_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fu2272428%5Flive%5Fwarwick%5Fac%5Fuk%2FDocuments%2FHedgehogs%2FRiemann%5Fand%5Fhedegehogs%2Epdf&parent=%2Fpersonal%2Fu2272428%5Flive%5Fwarwick%5Fac%5Fuk%2FDocuments%2FHedgehogs&ga=1)). The theory is contained in the file **main.pdf**, while the Wolfram Language 
 notebook **Animation** contains a visualization of the Riemann parameterization.
 
 
