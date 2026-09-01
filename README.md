@@ -8,7 +8,7 @@ notebook **Animation** contains a visualization of the Riemann parameterization.
 
 ## TwoHedgehogs
 
-**TwoHedgehogs** is a Wolfram Language package for visualizing the boundary values of a Riemann map associated with a two-hedgehog domain. It provides functions for computing the modulus of the uniformization map on the unit circle, locating distinguished branch points, and producing static and interactive graphics illustrating the construction.
+**TwoHedgehogs** is a Wolfram Language package for visualizing the boundary values of a Riemann map associated with a two-hedgehog domain. It provides functions for computing the modulus of the uniformization map on the unit circle, locating distinguished branch points, and producing an interactive graphics illustrating the construction.
 
 ### Features
 
@@ -31,13 +31,13 @@ main.pdf             pdf notes on the topic
 
 ### Requirements
 
-* Wolfram Language / Mathematica Version 14.3 or later (recommended)
+* Wolfram Language / Mathematica Version 14.3 or later.
 
 ### Installation
 
 Clone or download this repository.
 
-If `TwoHedgehogs.wl` is in the same directory as your notebook, load it with
+Run the package `TwoHedgehogs.wl`. If `TwoHedgehogs.wl` is in the same directory as your notebook, load it with
 
 ```wl
 Get[FileNameJoin[{NotebookDirectory[], "TwoHedgehogs.wl"}]]
