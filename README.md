@@ -76,7 +76,7 @@ profileGraphic[Pi, 2/3, Pi/4]
 ### Exported Functions
 
 In the following functions, $s$ denotes the parameter associated with the given hedgehog while $p = \theta / \pi$
-where `\theta` denotes the oriented anlge between the quills.
+where `$\theta$` denotes the oriented anlge between the quills.
 
 | Function                     | Description                                                       |
 | ---------------------------- | ----------------------------------------------------------------- |
