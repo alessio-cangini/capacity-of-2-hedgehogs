@@ -128,5 +128,3 @@
 (*EndPackage[]*)
 (*(*Export["parametrization_2_quills.avi",hedgehogAnimation]*)*)
 
-
-
