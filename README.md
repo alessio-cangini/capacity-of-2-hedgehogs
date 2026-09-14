@@ -8,17 +8,7 @@ notebook **Animation** contains a visualization of the Riemann parameterization.
 
 ## TwoHedgehogs
 
-**TwoHedgehogs** is a Wolfram Language package for visualizing the boundary values of a Riemann map associated with a two-hedgehog domain. It provides functions for computing the modulus of the uniformization map on the unit circle, locating distinguished branch points, and producing an interactive graphics illustrating the construction.
-
-### Features
-
-The package includes functions to
-
-* compute the modulus of the uniformization map on the unit circle,
-* visualize the parameterization of the unit circle,
-* visualize the corresponding two-hedgehog domain,
-* plot the boundary modulus as a function of the parameter, and
-* interactively explore the construction through a `Manipulate` interface.
+**TwoHedgehogs** is a Wolfram Language package. It provides functions for computing the modulus of the uniformization map on the unit circle, locating distinguished branch points, and producing an interactive graphics illustrating the construction.
 
 ### Repository Contents
 
@@ -57,37 +47,21 @@ After loading the package, the interactive demonstration is launched with
 hedgehogAnimation[]
 ```
 
-Individual functions can also be used directly. For example,
-
-```wl
-uniformizationValue[Pi/3, Pi, 2/3]
-
-realQuillParameter[Pi, 2/3]
-
-complexQuillParameter[Pi, 2/3]
-
-domainGraphic[Pi, 2/3, Pi/4]
-
-hedgehogGraphic[Pi, 2/3, Pi/4]
-
-profileGraphic[Pi, 2/3, Pi/4]
-```
-
 ### Exported Functions
 
 In the following functions, `s` denotes the parameter associated with the given hedgehog while `p` is $\theta / \pi$,
 where $\theta$ denotes the oriented anlge between the quills.
 
-| Function                     | Description                                                       |
-| ---------------------------- | ----------------------------------------------------------------- |
-| `uniformizationValue[t,s,p]` | Computes the modulus of the Riemann map on the unit circle.       |
-| `auxiliaryAngle[s,p]`        | Computes the auxiliary angle used in the branch-point formulas.   |
-| `realQuillParameter[s,p]`    | Computes the parameter corresponding to the real endopoint.       |
-| `complexQuillParameter[s,p]` | Computes the parameter corresponding to the complex endpoint.     |
-| `domainGraphic[s,p,a]`       | Draws the parameterization of the unit circle.                    |
-| `hedgehogGraphic[s,p,a]`     | Draws the corresponding two-hedgehog.                             |
-| `profileGraphic[s,p,a]`      | Plots the boundary modulus as a function of the parameter.        |
-| `hedgehogAnimation[]`        | Opens an interactive visualization.                               |
+| Function                     | Description                                                                                               |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `uniformizationValue[t,s,p]` | Computes the modulus of the Riemann map on the unit circle.                                               |
+| `auxiliaryAngle[s,p]`        | Computes the auxiliary angle used in the branch-point formulas.                                           |
+| `realQuillParameter[s,p]`    | Computes the parameter corresponding to the real endopoint.                                               |
+| `complexQuillParameter[s,p]` | Computes the parameter corresponding to the complex endpoint.                                             |
+| `domainGraphic[s,p,a]`       | Draws the parameterization of the unit circle and the point parameterized by $e^{ia}$.                    |
+| `hedgehogGraphic[s,p,a]`     | Draws the corresponding two-hedgehog and the point parameterized by $e^{ia}$.                             |
+| `profileGraphic[s,p,a]`      | Plots the boundary modulus as a function of the parameter and the point parameterized by $e^{ia}$.        |
+| `hedgehogAnimation[]`        | Opens an interactive visualization.                                                                       |
 
 ### Dynamic Content
 
@@ -106,6 +80,3 @@ For the mathematical details, please refer to the accompanying notes.
 ### Author
 
 Alessio Cangini
-
-### License
-?
